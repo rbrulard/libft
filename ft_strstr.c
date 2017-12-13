@@ -5,11 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 20:08:45 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/07/13 10:08:34 by rbrulard         ###   ########.fr       */
+/*   Created: 2017/12/08 17:23:32 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:33:15 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// copier les constchar ds de nouvelle strings et malloc les strings
+
 #include "libft.h"
 
 char	*ft_strstr(const char *haystack, const char *needle)
@@ -26,7 +26,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 			j++;
 		}
 		if (needle[j] == '\0')
-			return (haystack + i);
+			return ((char*)haystack + i);
 		i++;
 	}
 	return (NULL);

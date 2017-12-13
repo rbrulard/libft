@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 11:32:49 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/07/13 08:54:30 by rbrulard         ###   ########.fr       */
+/*   Created: 2017/12/08 17:52:45 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 12:03:27 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include "libft.h"
+
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	int i;
 

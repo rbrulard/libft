@@ -1,4 +1,18 @@
-int ft_strequ(char const *s1, char const *s2)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/13 14:37:00 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:16:53 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int		ft_strequ(char const *s1, char const *s2)
 {
 	int i;
 
@@ -10,5 +24,4 @@ int ft_strequ(char const *s1, char const *s2)
 		i++;
 	}
 	return (1);
-
 }

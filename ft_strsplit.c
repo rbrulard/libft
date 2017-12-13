@@ -1,6 +1,18 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/13 14:44:48 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:31:39 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int             ft_count_word(const char *str, char c)
+#include "libft.h"
+
+int		ft_count_word(const char *str, char c)
 {
 	int len;
 	int nb_word;
@@ -21,12 +33,12 @@ int             ft_count_word(const char *str, char c)
 	return (nb_word);
 }
 
-char    **ft_malloc_case(const char *str, char c)
+char	**ft_malloc_case(const char *str, char c)
 {
-	int i;        
-	int             len;
-	int             size_word;
-	char    **tabtemp;
+	int		i;
+	int		len;
+	int		size_word;
+	char	**tabtemp;
 
 	i = 0;
 	len = 0;
@@ -48,19 +60,12 @@ char    **ft_malloc_case(const char *str, char c)
 	return (tabtemp);
 }
 
-
 char	**ft_strsplit(char const *s, char c)
-	/*Alloue (avec malloc(3)) et retourne un tableau de chaines de
-	  caractères “fraiches” (toutes terminées par un ’\0’, le tableau
-	  également donc) résultant de la découpe de s selon le caractère
-	  c. Si l’allocation echoue, la fonction retourne NULL. Exemple :
-	  ft_strsplit("*salut*les***etudiants*", ’*’) renvoie
-	  le tableau ["salut", "les", "etudiants"]*/
 {
-	char    **tabfinal;
-	int             i;
-	int             len;
-	int             j;
+	char	**tabfinal;
+	int		i;
+	int		len;
+	int		j;
 
 	i = 0;
 	len = 0;
@@ -72,7 +77,7 @@ char	**ft_strsplit(char const *s, char c)
 		{
 			j = 0;
 			while ((s[len] > 31 && s[len++] < 127) && s[len] != c)
-			{				
+			{
 				tabfinal[i][j] = s[len++];
 				j++;
 			}
@@ -82,16 +87,4 @@ char	**ft_strsplit(char const *s, char c)
 			len++;
 	}
 	return (tabfinal);
-}
-
-int main(int ac, char **av, char c)
-{
-	int i;
-	i = 0;
-	while (av[1][i])
-	{
-		printf("%s\n", ft_strsplit(av[1][i], 'c'));
-		i++;
-	}
-	return (0);
 }

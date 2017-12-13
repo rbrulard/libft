@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/13 15:54:43 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/07/13 15:54:55 by rbrulard         ###   ########.fr       */
+/*   Created: 2017/12/08 16:39:20 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:10:24 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
 	int i;
 	int j;

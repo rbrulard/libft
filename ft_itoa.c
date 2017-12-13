@@ -1,7 +1,18 @@
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/13 14:48:18 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 15:53:37 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_len(int n)
+#include "libft.h"
+
+int			ft_len(int n)
 {
 	int len;
 
@@ -11,7 +22,6 @@ int ft_len(int n)
 		n = -n;
 		len++;
 	}
-
 	while (n > 1)
 	{
 		n = n / 10;
@@ -20,7 +30,7 @@ int ft_len(int n)
 	return (len + 1);
 }
 
-char	*ft_strrev(char *str)
+char		*ft_strrev(char *str)
 {
 	int		i;
 	int		j;
@@ -42,16 +52,11 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
-void put(char c)
+char		*ft_itoa(int n)
 {
-	write(1, &c, 1);
-}
-
-char *ft_itoa(int n)
-{
-	int i;
-	int l;
-	char *s;
+	int		i;
+	int		l;
+	char	*s;
 
 	l = ft_len(n) + 1;
 	i = 0;
@@ -60,9 +65,9 @@ char *ft_itoa(int n)
 	s[l] = '\0';
 	l--;
 	while (l > 0)
-	{		
+	{
 		s[l] = n % 10 + '0';
-		put(s[l]);
+		ft_putchar(s[l]);
 		n = n / 10;
 		l--;
 	}
@@ -70,40 +75,4 @@ char *ft_itoa(int n)
 		s[l] = '-';
 	ft_strrev(s);
 	return (s);
-}
-int main()
-{
-	int i;
-	int l;
-	char *s;
-	int n;
-	int j;
-
-	j = 0;
-	n = -12345;
-	l = ft_len(n);
-	i = 0;
-	if (!(s = (char*)malloc(sizeof(char) * l)))
-		return (0);
-	s[l] = '\0';
-	//	l--;
-	while (l > 0)
-	{
-		l--;
-		s[l] = (n % 10) + '0';
-		//		put(s[l]);
-		n = n / 10;
-		//	l--;
-	}
-	ft_strrev(s);
-	while (s[j])
-	{
-		if (n < 0)
-			s[l] = '-';		
-		put(s[j]);
-		j++;
-	}
-	put('\n');
-	return (0);
-
 }

@@ -6,11 +6,13 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/10 16:19:36 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/07/12 17:19:01 by rbrulard         ###   ########.fr       */
+/*   Updated: 2017/12/13 15:46:06 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
 	int res;
 	int neg;

@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 17:14:08 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/07/13 15:43:30 by rbrulard         ###   ########.fr       */
+/*   Created: 2017/12/08 16:35:29 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:12:20 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 

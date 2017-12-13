@@ -1,17 +1,18 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/13 14:42:03 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:36:24 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(const char *str)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-
-int ft_check(const char *s)
+int		ft_check(const char *s)
 {
 	int i;
 	int count;
@@ -24,27 +25,25 @@ int ft_check(const char *s)
 	{
 		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 			count++;
-		else 
+		else
 			count = 0;
 		i++;
 	}
 	return (count);
-
 }
 
 char	*ft_strtrim(char const *s)
 {
-	int i;
-	int start;
-	int len;
-	char *trim;
-
+	int		i;
+	int		start;
+	int		len;
+	char	*trim;
 
 	start = 0;
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-		len = ft_strlen(s) - (i + ft_check(s));
+	len = ft_strlen(s) - (i + ft_check(s));
 	if (!(trim = (char*)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	while (s[i])

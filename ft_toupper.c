@@ -1,8 +1,21 @@
-int ft_toupper(int c)
-{
-        if ((unsigned char)c > 96 && (unsigned char)c < 123)
-                return (c - 32);
-        else
-                return (c);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/13 12:30:28 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:37:37 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_toupper(int c)
+{
+	if ((unsigned char)c > 96 && (unsigned char)c < 123)
+		return (c - 32);
+	else
+		return (c);
+}

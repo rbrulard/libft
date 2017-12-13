@@ -1,34 +1,26 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/08 14:31:12 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/13 16:04:45 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+#include "libft.h"
+
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
-	char *tmp;
+	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		tmp[i] = ((char*)src)[i];
+		((char*)dst)[i] = ((char*)src)[i];
 		i++;
 	}
-	i = 0;
-	while (i < n)
-	{
-		((char*)dest)[i] = tmp[i];
-		i++;
-	}
-	return (dest);
-}
-
-int main ()
-{
-	char dest[] = "oldstring";
-	const char src[]  = "newstring";
-
-	printf("Before memmove dest = %s, src = %s\n", dest, src);
-	ft_memmove(dest, src, 9);
-	printf("After memmove dest = %s, src = %s\n", dest, src);
-
-	return(0);
+	return (dst);
 }

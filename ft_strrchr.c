@@ -1,25 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/08 17:12:40 by rbrulard          #+#    #+#             */
+/*   Updated: 2017/12/08 17:23:07 by rbrulard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int i;
-	char *s1; //malloc s1
 
 	i = 0;
 	while (s[i])
-	{
-		s1[i] = s[i];
 		i++;
-	}
-
-	i = i - 1;
 	while (i >= 0)
 	{
-		if (s1[i] != ((unsigned char)c))
+		if ((char)s[i] != ((unsigned char)c))
 			i--;
 		else
-			return (s1 + i);
+			return ((char*)s + i);
 	}
 	return (0);
 }

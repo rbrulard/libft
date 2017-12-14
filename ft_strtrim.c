@@ -6,16 +6,16 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:42:03 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/13 16:36:24 by rbrulard         ###   ########.fr       */
+/*   Updated: 2017/12/14 14:57:03 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_check(const char *s)
+static	int			ft_check(const char *s)
 {
-	int i;
-	int count;
+	int				i;
+	int				count;
 
 	count = 0;
 	i = 0;
@@ -32,12 +32,12 @@ int		ft_check(const char *s)
 	return (count);
 }
 
-char	*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
-	int		i;
-	int		start;
-	int		len;
-	char	*trim;
+	int			i;
+	int			start;
+	int			len;
+	char		*trim;
 
 	start = 0;
 	i = 0;

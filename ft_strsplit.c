@@ -6,13 +6,13 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:44:48 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/13 16:31:39 by rbrulard         ###   ########.fr       */
+/*   Updated: 2017/12/14 14:59:40 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_word(const char *str, char c)
+static	int		ft_count_word(const char *str, char c)
 {
 	int len;
 	int nb_word;
@@ -33,7 +33,7 @@ int		ft_count_word(const char *str, char c)
 	return (nb_word);
 }
 
-char	**ft_malloc_case(const char *str, char c)
+static	char	**ft_malloc_case(const char *str, char c)
 {
 	int		i;
 	int		len;
@@ -60,7 +60,7 @@ char	**ft_malloc_case(const char *str, char c)
 	return (tabtemp);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tabfinal;
 	int		i;

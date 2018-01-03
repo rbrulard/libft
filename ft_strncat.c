@@ -19,7 +19,7 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 
 	j = 0;
 	i = 0;
-	while (s1)
+	while (s1[i])
 		i++;
 	while (s2[j] && j < n)
 	{

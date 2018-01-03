@@ -24,3 +24,16 @@ void		*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+
+int main () 
+{
+	char str[50];
+
+	strcpy(str,"This is string.h library function");
+	puts(str);
+
+	memset(str,'$', 0);
+	puts(str);
+
+	return(0);
+}

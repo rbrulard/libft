@@ -16,17 +16,20 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 		size_t n)
 {
 	size_t i;
+	unsigned char b;
+	unsigned char *source;
+	unsigned char *desti;
 
 	i = 0;
+	source = (unsigned char *)src;
+	desti = (unsigned char *)dst;
+	b = (unsigned char)c;
 	while (i < n)
 	{
-		if (((const char*)src)[i] != (unsigned char)c)
-		{
-			((char*)dst)[i] = ((const char*)src)[i];
-			i++;
-		}
-		else
-			return (dst);
+		desti[i] = source[i];
+		if (source[i] == b)
+			return (dst + i + 1);
+		i++;
 	}
-	return (dst);
+	return (NULL);
 }

@@ -12,67 +12,40 @@
 
 #include "libft.h"
 
-static	int		ft_len(int n)
+static void	itoa_isneg(int *n, int *neg)
 {
-	int len;
-
-	len = 0;
-	if (n < 0)
+	if (*n < 0)
 	{
-		n = -n;
-		len++;
+		*n *= -1;
+		*neg = 1;
 	}
-	while (n > 1)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len + 1);
 }
 
-static	char	*ft_strrev(char *str)
+char	*ft_itoa(int n)
 {
-	int		i;
-	int		j;
-	char	n;
+	int		tmp;
+	int		len;
+	int		neg;
+	char	*str;
 
-	i = 0;
-	j = 0;
-	while (str[i])
-		i++;
-	i = i - 1;
-	while (i > j)
-	{
-		n = str[i];
-		str[i] = str[j];
-		str[j] = n;
-		i--;
-		j++;
-	}
-	return (str);
-}
-
-char			*ft_itoa(int n)
-{
-	int		i;
-	int		l;
-	char	*s;
-
-	l = ft_len(n) + 1;
-	i = 0;
-	if (!(s = (char*)malloc(sizeof(char) * l)))
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	tmp = n;
+	len = 2;
+	neg = 0;
+	itoa_isneg(&n, &neg);
+	while (tmp /= 10)
+		len++;
+	len += neg;
+	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
 		return (NULL);
-	s[l] = '\0';
-	l--;
-	while (l > 0)
+	str[--len] = '\0';
+	while (len--)
 	{
-		s[l] = n % 10 + '0';
-		ft_putchar(s[l]);
+		str[len] = n % 10 + '0';
 		n = n / 10;
-		l--;
 	}
-	if (n < 0)
-		s[l] = '-';
-	ft_strrev(s);
-	return (s);
+	if (neg)
+		str[0] = '-';
+	return (str);
 }

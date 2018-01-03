@@ -12,79 +12,57 @@
 
 #include "libft.h"
 
-static	int		ft_count_word(const char *str, char c)
+static const char	*ft_next(const char *s1, char c, int next)
 {
-	int len;
-	int nb_word;
-
-	len = 0;
-	nb_word = 0;
-	while (str[len])
-	{
-		if (str[len] == c)
-		{
-			nb_word++;
-			while (str[len] == c)
-				len++;
-		}
-		else
-			len++;
-	}
-	return (nb_word);
+	if (next)
+		while ((*s1 != '\0') && (*s1 == c))
+			s1++;
+	else
+		while ((*s1 != '\0') && (*s1 != c))
+			s1++;
+	return (s1);
 }
 
-static	char	**ft_malloc_case(const char *str, char c)
+static int		ft_leng(const char *s1, char c)
 {
-	int		i;
-	int		len;
-	int		size_word;
-	char	**tabtemp;
+	int i;
 
 	i = 0;
-	len = 0;
-	if (!(tabtemp = (char**)malloc(sizeof(char*) * ft_count_word(str, c) + 1)))
-		return (NULL);
-	tabtemp[ft_count_word(str, c)] = NULL;
-	while (str[len])
-		if ((str[len] > 31 && str[len] < 127) && str[len] != c)
+	while (*s1 != '\0')
+	{
+		s1 = ft_next(s1, c ,1);
+		if (*s1 != '\0')
 		{
-			size_word = 0;
-			while ((str[len] > 31 && str[len++] < 127) && str[len] != c)
-				size_word++;
-			if (!(tabtemp[i] = (char*)malloc(sizeof(char) * size_word + 1)))
-				return (NULL);
-			tabtemp[i++][size_word] = 0;
+			i++;
+			s1 = ft_next(s1, c, 0);
 		}
-		else
-			len++;
-	return (tabtemp);
+	}
+	return (i);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char	**tabfinal;
+	char **name;
 	int		i;
-	int		len;
-	int		j;
+	const char	*next;
 
-	i = 0;
-	len = 0;
-	if (!(tabfinal = ft_malloc_case(s, c)))
+	if (s == NULL)
 		return (NULL);
-	while (s[len])
+	name = (char **)malloc(sizeof(char *) * (ft_leng(s, c) + 1));
+	if (name == NULL)
+		return (NULL);
+	i = 0;
+	while (*s != '\0')
 	{
-		if ((s[len] > 31 && s[len] < 127) && s[len] != c)
+		s = ft_next(s, c, 1);
+		if (*s != '\0')
 		{
-			j = 0;
-			while ((s[len] > 31 && s[len++] < 127) && s[len] != c)
-			{
-				tabfinal[i][j] = s[len++];
-				j++;
-			}
+			next = ft_next(s, c, 0);
+			name[i] = ft_strsub(s, 0, next - s);
 			i++;
+			s = next;
 		}
-		else
-			len++;
 	}
-	return (tabfinal);
+	name[i] = NULL;
+	return (name);
 }

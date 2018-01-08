@@ -6,7 +6,7 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:56:53 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/13 16:09:18 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:43:40 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
+	if (s == NULL)
+		return ;
 	write(1, s, ft_strlen(s));
 }

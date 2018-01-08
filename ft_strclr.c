@@ -6,22 +6,23 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 16:11:37 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/13 16:11:47 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:01:14 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_strclr(char *s)
 {
 	int i;
-	int j;
 
-	j = 0;
 	i = 0;
-	while (s[i])
-		i++;
-	while (j < i)
+	if (s != NULL)
 	{
-		s[j] = '\0';
-		j++;
+		while (s[i])
+		{
+			s[i] = '\0';
+			i++;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:44:48 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/14 14:59:40 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 12:19:45 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static const char	*ft_next(const char *s1, char c, int next)
 	return (s1);
 }
 
-static int		ft_leng(const char *s1, char c)
+static int			ft_leng(const char *s1, char c)
 {
 	int i;
 
 	i = 0;
 	while (*s1 != '\0')
 	{
-		s1 = ft_next(s1, c ,1);
+		s1 = ft_next(s1, c, 1);
 		if (*s1 != '\0')
 		{
 			i++;
@@ -40,10 +40,10 @@ static int		ft_leng(const char *s1, char c)
 	return (i);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
-	char **name;
-	int		i;
+	char		**name;
+	int			i;
 	const char	*next;
 
 	if (s == NULL)

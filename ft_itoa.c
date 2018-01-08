@@ -6,7 +6,7 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:48:18 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/14 14:57:49 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 12:16:52 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	itoa_isneg(int *n, int *neg)
 	}
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		tmp;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 14:42:03 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/14 14:57:03 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:29:37 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char				*ft_strtrim(char const *s)
 
 	start = 0;
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	len = ft_strlen(s) - (i + ft_check(s));

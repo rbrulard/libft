@@ -6,7 +6,7 @@
 /*   By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 15:31:52 by rbrulard          #+#    #+#             */
-/*   Updated: 2017/12/13 16:07:52 by rbrulard         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:46:49 by rbrulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	write(fd, s, strlen(s));
+	if (s == NULL)
+		return ;
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

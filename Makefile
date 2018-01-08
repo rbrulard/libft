@@ -6,7 +6,7 @@
 #    By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/14 15:09:35 by rbrulard          #+#    #+#              #
-#    Updated: 2017/12/14 16:58:30 by rbrulard         ###   ########.fr        #
+#    Updated: 2018/01/05 15:43:16 by rbrulard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ ft_isprint.c    ft_putchar.c    ft_strcmp.c     ft_strmapi.c    ft_strtrim.c\
 ft_itoa.c       ft_putchar_fd.c ft_strcpy.c     ft_strncat.c    ft_tolower.c\
 ft_putendl.c    ft_strdel.c     ft_strncmp.c    ft_toupper.c\
 ft_memalloc.c   ft_putendl_fd.c ft_strdup.c     ft_strncpy.c\
+ft_lstnew.c\
 
 OBJ = $(SRC:.c=.o)
 
@@ -42,3 +43,5 @@ fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re

@@ -6,7 +6,7 @@
 #    By: rbrulard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/14 15:09:35 by rbrulard          #+#    #+#              #
-#    Updated: 2018/01/05 15:43:16 by rbrulard         ###   ########.fr        #
+#    Updated: 2018/01/08 11:47:45 by rbrulard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ ft_isprint.c    ft_putchar.c    ft_strcmp.c     ft_strmapi.c    ft_strtrim.c\
 ft_itoa.c       ft_putchar_fd.c ft_strcpy.c     ft_strncat.c    ft_tolower.c\
 ft_putendl.c    ft_strdel.c     ft_strncmp.c    ft_toupper.c\
 ft_memalloc.c   ft_putendl_fd.c ft_strdup.c     ft_strncpy.c\
-ft_lstnew.c\
+ft_lstnew.c     ft_lstadd.c    ft_lstdel.c    ft_lstdelone.c ft_lstiter.c\
+ft_lstmap.c\
 
 OBJ = $(SRC:.c=.o)
 
